@@ -2,7 +2,7 @@ require 'htmlentities'
 
 class Griddler::Email
   include ActionView::Helpers::SanitizeHelper
-  attr_reader :to, :from, :body, :raw_body, :subject, :attachments
+  attr_reader :to, :from, :body, :raw_body, :subject, :attachments, :params
 
   def initialize(params)
     @params = params
@@ -20,8 +20,6 @@ class Griddler::Email
   end
 
   private
-
-  attr_reader :params
 
   def config
     Griddler.configuration
